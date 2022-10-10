@@ -1,0 +1,28 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :entropy:            ""
+  :start_date:         2022-01-01
+:steps:
+- :name: "01-setup-schemas"
+  :queries:
+    - :name: 01-setup-schemas
+      :file: standard/01-setup/01-main/01-setup-schemas.sql
+      :template: true
+- :name: "02-setup-metadata"
+  :queries:
+    - :name: 02-setup-metadata
+      :file: standard/01-setup/01-main/02-setup-metadata.sql
+      :template: true
