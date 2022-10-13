@@ -6,6 +6,8 @@ AS (
 
     -- app ID
     a.app_id,
+    d.name_tracker,
+    d.tenant,
 
     -- session fields
     a.domain_sessionid,
@@ -134,4 +136,7 @@ AS (
 
   INNER JOIN {{.scratch_schema}}.sessions_lasts{{.entropy}} c
     ON b.domain_sessionid = c.domain_sessionid
+
+  INNER JOIN {{.scratch_schema}}.session_ids_this_run{{.entropy}} d
+    ON b.domain_sessionid = d.domain_sessionid
 );

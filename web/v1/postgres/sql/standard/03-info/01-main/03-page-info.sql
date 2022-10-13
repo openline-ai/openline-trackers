@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS {{.scratch_schema}}.page_info{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.page_info_this_run{{.entropy}};
 
-create table {{.scratch_schema}}.page_info{{.entropy}} as (
+create table {{.scratch_schema}}.page_info_this_run{{.entropy}} as (
 select *, nextval('{{.output_schema}}.shared_id_seq')       as id
     from (SELECT b.tenant                                            as tenant,
           a.name_tracker                                                        as name_tracker,
@@ -8,7 +8,8 @@ select *, nextval('{{.output_schema}}.shared_id_seq')       as id
           a.page_url                                                            as page_url,
           a.page_title                                                          as page_title,
           a.collector_tstamp                                                    as updated_on,
-          row_number() over (partition by a.page_url order by a.etl_tstamp desc ) as row_number
+          a.derived_tstamp                                                      as last_visit,
+          row_number() over (partition by a.name_tracker, a.page_url order by a.derived_tstamp desc ) as row_number
     FROM {{.input_schema}}.events a
     inner join {{.tenant_schema}}.sp_tracker b on b.tracker_name = a.name_tracker
     where a.event IN ('page_view')

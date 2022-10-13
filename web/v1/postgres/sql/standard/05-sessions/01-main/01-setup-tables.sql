@@ -2,6 +2,8 @@
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     -- app ID
     app_id VARCHAR(255),
+    name_tracker varchar(128),
+    tenant varchar(64),
 
     -- session fields
     domain_sessionid VARCHAR(128),

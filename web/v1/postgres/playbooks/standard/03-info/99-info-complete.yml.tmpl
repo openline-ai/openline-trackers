@@ -8,12 +8,9 @@
   :password:
   :ssl:
 :variables:
-  :model_version:
   :scratch_schema:     scratch
-  :output_schema:      derived
-  :input_schema:       atomic
-  :tenant_schema:      openline
   :entropy:            ""
+  :cleanup:            true
 :steps:
 - :name: "99-cleanup-tables"
   :queries:

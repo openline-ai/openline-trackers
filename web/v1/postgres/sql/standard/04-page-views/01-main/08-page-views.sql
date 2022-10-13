@@ -8,6 +8,8 @@ AS(
     ev.event_id,
 
     ev.app_id,
+    ev.name_tracker,
+    sp.tenant,
 
     -- user fields
     ev.user_id,
@@ -123,6 +125,7 @@ AS(
     ya.operating_system_version
 
   FROM {{.scratch_schema}}.pv_page_view_events{{.entropy}} ev
+  inner join {{.tenant_schema}}.sp_tracker sp on sp.tracker_name = ev.name_tracker
 
   LEFT JOIN {{.scratch_schema}}.pv_engaged_time{{.entropy}} t
   ON ev.page_view_id = t.page_view_id

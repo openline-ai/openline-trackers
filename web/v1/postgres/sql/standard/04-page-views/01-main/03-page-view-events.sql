@@ -8,6 +8,7 @@ AS(
     ev.event_id,
 
     ev.app_id,
+    ev.name_tracker,
 
     -- user fields
     ev.user_id,

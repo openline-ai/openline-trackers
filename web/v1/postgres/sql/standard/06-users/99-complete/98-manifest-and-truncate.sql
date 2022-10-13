@@ -6,7 +6,8 @@ BEGIN;
 
   INSERT INTO {{.output_schema}}.users_manifest{{.entropy}} (SELECT * FROM {{.scratch_schema}}.users_userids_this_run{{.entropy}});
 
-  -- Truncate input table just processed
   TRUNCATE {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}};
-
+{{if eq .cleanup true}}
+  DROP TABLE IF EXISTS {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}};
+{{end}}
 END;

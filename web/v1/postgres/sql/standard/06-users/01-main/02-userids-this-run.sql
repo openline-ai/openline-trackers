@@ -7,6 +7,7 @@ AS(
     a.domain_userid,
     LEAST(a.start_tstamp, b.start_tstamp) AS start_tstamp
 
+
   FROM
     {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}} a
   LEFT JOIN

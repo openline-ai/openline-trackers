@@ -4,6 +4,10 @@ CREATE TABLE {{.scratch_schema}}.users_this_run{{.entropy}}
 
 AS (
   SELECT
+    b.app_id,
+    b.name_tracker,
+    b.tenant,
+
     -- user fields
     a.user_id,
     a.domain_userid,

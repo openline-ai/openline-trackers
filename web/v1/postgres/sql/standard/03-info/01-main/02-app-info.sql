@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS {{.scratch_schema}}.app_info{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.app_info_this_run{{.entropy}};
 
-create table {{.scratch_schema}}.app_info{{.entropy}} as (
+create table {{.scratch_schema}}.app_info_this_run{{.entropy}} as (
     SELECT
     nextval('{{.output_schema}}.shared_id_seq') as id,
     b.tenant as tenant,

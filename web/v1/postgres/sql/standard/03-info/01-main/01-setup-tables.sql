@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_info{{.entropy}} (
     page_url     varchar(4096),
     page_title   varchar(2000),
     updated_on   timestamp,
-    row_number   bigint,
+    last_visit   timestamp,
     id           bigint
 );
 

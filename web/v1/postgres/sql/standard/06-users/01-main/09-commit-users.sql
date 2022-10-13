@@ -29,7 +29,7 @@ BEGIN;
   );
 
 -- Commit last success run id
-update {{.output_schema}}.sessions_last_success_run_id{{.entropy}}
-set run_id = (select run_id from {{.scratch_schema}}.metadata_run_id{{.entropy}});
+update {{.output_schema}}.users_last_success_run_id{{.entropy}}
+    set run_id = (select run_id from {{.scratch_schema}}.metadata_run_id{{.entropy}});
 
 END;

@@ -55,6 +55,8 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_views{{.entropy}} (
   event_id CHAR(36) ,
 
   app_id VARCHAR(255) ,
+  name_tracker varchar(128),
+  tenant varchar(64),
 
   user_id VARCHAR(255) ,
   domain_userid VARCHAR(128) ,

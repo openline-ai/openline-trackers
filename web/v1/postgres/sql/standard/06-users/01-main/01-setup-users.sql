@@ -32,8 +32,8 @@ INSERT INTO {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
     'run',
     run_id,
     '{{.model_version}}',
-    'web',
     'users',
+    'main',
     now(),
     NULL,
     NULL,
@@ -49,6 +49,10 @@ INSERT INTO {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
 
 
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.users{{.entropy}} (
+  -- app ID
+  app_id VARCHAR(255),
+  name_tracker varchar(128),
+  tenant varchar(64),
 
   -- user fields
   user_id VARCHAR(255) ,
@@ -111,4 +115,4 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.users{{.entropy}} (
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.users_manifest{{.entropy}} (
     domain_userid VARCHAR(128),
     start_tstamp TIMESTAMP
-    );
+);

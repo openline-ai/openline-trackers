@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS {{.scratch_schema}}.sessions_this_run{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.session_ids_this_run{{.entropy}};
 
-create table {{.scratch_schema}}.sessions_this_run{{.entropy}} as (
+create table {{.scratch_schema}}.session_ids_this_run{{.entropy}} as (
     select a.domain_sessionid,
     a.app_id,
     a.name_tracker,
