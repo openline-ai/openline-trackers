@@ -25,7 +25,7 @@ AS (
        ON a.event_id = b.root_id
        AND a.collector_tstamp = b.root_tstamp
        INNER JOIN
-   {{.tenant_schema}}.sp_tracker c on c.tracker_name = a.name_tracker
+   {{.tenant_schema}}.{{.tracker_table}} c on c.tracker_name = a.name_tracker and c.app_id = a.app_id
        INNER JOIN
    {{.scratch_schema}}.pv_ids_staged{{.entropy}} d on d.id = b.id
    where a.event in ('page_view','page_ping')
