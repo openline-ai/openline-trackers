@@ -1,0 +1,74 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :entropy:            ""
+  :start_date:         2022-01-01
+  :ua_bot_filter:      true
+  :minimumVisitLength: 10
+  :heartbeat:          10
+:steps:
+- :name: "01-setup-tables"
+  :queries:
+    - :name: 01-setup-tables
+      :file: standard/04-page-views/01-main/01-setup-tables.sql
+      :template: true
+- :name: "02-events-staged"
+  :queries:
+    - :name: 02-events-staged
+      :file: standard/04-page-views/01-main/02-events-staged.sql
+      :template: true
+- :name: "03-page-view-events"
+  :queries:
+    - :name: 03-page-view-events
+      :file: standard/04-page-views/01-main/03-page-view-events.sql
+      :template: true
+- :name: "04-page-view-duplicates"
+  :queries:
+    - :name: 04-page-view-duplicates
+      :file: standard/04-page-views/01-main/04-page-view-duplicates.sql
+      :template: true
+- :name: "05-06-engaged-time-and-scroll-depth"
+  :queries:
+    - :name: 05-engaged-time
+      :file: standard/04-page-views/01-main/05-engaged-time.sql
+      :template: true
+    - :name: 06-scroll-depth
+      :file: standard/04-page-views/01-main/06-scroll-depth.sql
+      :template: true
+- :name: "07-a-ua-parser"
+  :queries:
+    - :name: 07-a-ua-parser
+      :file: standard/04-page-views/01-main/07-a-ua-parser.sql
+      :template: true
+- :name: "07-b-yauaa"
+  :queries:
+    - :name: 07-b-yauaa
+      :file: standard/04-page-views/01-main/07-b-yauaa.sql
+      :template: true
+- :name: "08-page-views"
+  :queries:
+    - :name: 08-page-views
+      :file: standard/04-page-views/01-main/08-page-views.sql
+      :template: true
+- :name: "09-page-views-metadata"
+  :queries:
+    - :name: 09-page-views-metadata
+      :file: standard/04-page-views/01-main/09-page-views-metadata.sql
+      :template: true
+- :name: "10-commit-page-views"
+  :queries:
+    - :name: 10-commit-page-views
+      :file: standard/04-page-views/01-main/10-commit-page-views.sql
+      :template: true

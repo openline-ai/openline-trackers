@@ -1,0 +1,48 @@
+{
+  "schema": "iglu:com.snowplowanalytics.datamodeling/config/jsonschema/1-0-0",
+  "data": {
+    "enabled": true,
+    "storage": "Default",
+    "playbooks": [
+      {
+        "playbook": "standard/01-setup/01-setup-main",
+        "dependsOn": []
+      },
+      {
+        "playbook": "standard/03-info/01-info-main",
+        "dependsOn": ["standard/01-setup/01-setup-main"]
+      },
+      {
+        "playbook": "standard/04-page-views/01-page-views-main",
+        "dependsOn": ["standard/03-info/01-info-main"]
+      },
+      {
+        "playbook": "standard/05-sessions/01-sessions-main",
+        "dependsOn": ["standard/04-page-views/01-page-views-main"]
+      },
+      {
+        "playbook": "standard/06-users/01-users-main",
+        "dependsOn": ["standard/05-sessions/01-sessions-main"]
+      },
+      {
+        "playbook": "standard/04-page-views/99-page-views-complete",
+        "dependsOn": ["standard/04-page-views/01-page-views-main", "standard/05-sessions/01-sessions-main", "standard/06-users/01-users-main"]
+      },
+      {
+        "playbook": "standard/05-sessions/99-sessions-complete",
+        "dependsOn": ["standard/06-users/01-users-main", "standard/05-sessions/01-sessions-main"]
+      },
+      {
+        "playbook": "standard/06-users/99-users-complete",
+        "dependsOn": ["standard/06-users/01-users-main"]
+      },
+      {
+        "playbook": "standard/03-info/99-info-complete",
+        "dependsOn": ["standard/03-info/01-info-main", "standard/06-users/01-users-main"]
+      }
+    ],
+    "lockType": "hard",
+    "owners": [
+    ]
+  }
+}

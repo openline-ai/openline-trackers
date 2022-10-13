@@ -1,0 +1,11 @@
+TRUNCATE {{.scratch_schema}}.pv_events_staged{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_engaged_time{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_scroll_depth{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_metadata_this_run{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_run_dupe_metadata_temp{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_run_metadata_temp{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_addon_ua_parser{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_addon_yauaa{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_page_view_events{{.entropy}};
+TRUNCATE {{.scratch_schema}}.page_views_this_run{{.entropy}};
+TRUNCATE {{.scratch_schema}}.pv_page_view_id_duplicates_this_run{{.entropy}};

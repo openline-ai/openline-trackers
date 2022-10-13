@@ -1,0 +1,22 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :entropy:            ""
+:steps:
+- :name: "99-cleanup-tables"
+  :queries:
+    - :name: 99-cleanup-tables
+      :file: standard/03-info/99-complete/99-cleanup-tables.sql
+      :template: true
