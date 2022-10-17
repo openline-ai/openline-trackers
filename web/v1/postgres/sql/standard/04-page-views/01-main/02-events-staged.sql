@@ -9,7 +9,6 @@ as (
     and a.root_tstamp <= (select max(run_id) from {{.scratch_schema}}.metadata_run_id{{.entropy}})
 );
 
-
 -- Events corresponding to staged page view IDs
 DROP TABLE IF EXISTS {{.scratch_schema}}.pv_events_staged{{.entropy}};
 

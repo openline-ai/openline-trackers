@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_views{{.entropy}} (
   network_userid VARCHAR(128) ,
 
   domain_sessionid VARCHAR(128) ,
-  domain_sessionidx INT ,
+  domain_sessionidx INT,
   page_view_in_session_index INT ,
   page_views_in_session INT ,
 

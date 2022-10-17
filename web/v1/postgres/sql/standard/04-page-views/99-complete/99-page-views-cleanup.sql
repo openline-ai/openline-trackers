@@ -12,5 +12,8 @@
     DROP TABLE IF EXISTS {{.scratch_schema}}.pv_page_view_id_duplicates_this_run{{.entropy}};
     DROP TABLE IF EXISTS {{.scratch_schema}}.pv_upsert_limit{{.entropy}};
     DROP TABLE IF EXISTS {{.scratch_schema}}.pv_ids_staged{{.entropy}};
+    DROP TABLE IF EXISTS {{.scratch_schema}}.pv_ids_lookback{{.entropy}};
+    DROP TABLE IF EXISTS {{.scratch_schema}}.pv_events_lookback{{.entropy}};
+    DROP TABLE IF EXISTS {{.scratch_schema}}.pv_page_view_events_lookback{{.entropy}};
 {{else}} select 1;
 {{end}}
