@@ -24,7 +24,21 @@ BEGIN;
     INSERT INTO {{.scratch_schema}}.page_views_staged{{.entropy}}
       (SELECT * FROM {{.scratch_schema}}.page_views_this_run{{.entropy}});
 
-  -- Commit metadata
+  -- Update previous page views with correct amount of pageviews in session
+    WITH temp AS (
+        SELECT domain_sessionid, MAX(page_views_in_session) as pvs_in_session
+        FROM
+            {{.output_schema}}.page_views{{.entropy}}
+        WHERE collector_tstamp >= (select max(run_id) + INTERVAL '-{{.look_back_days}} day'  from {{.output_schema}}.pv_last_success_run_id{{.entropy}})
+        GROUP BY domain_sessionid
+    )
+    UPDATE {{.output_schema}}.page_views{{.entropy}} a
+    SET page_views_in_session = temp.pvs_in_session
+        FROM temp
+    WHERE temp.domain_sessionid = a.domain_sessionid
+      and collector_tstamp >= (select max(run_id) + INTERVAL '-{{.look_back_days}} day'  from {{.output_schema}}.pv_last_success_run_id{{.entropy}});
+
+-- Commit metadata
   INSERT INTO {{.output_schema}}.datamodel_metadata{{.entropy}} (
     SELECT
       run_id,
