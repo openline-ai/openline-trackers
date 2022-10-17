@@ -48,13 +48,13 @@ do
   if [ ! -z "$TARGET_TEMPLATE" ]; then
 
     # Append template and playbook, subbing in credentials:
-    sed "s/PASSWORD_PLACEHOLDER/$DB_PWD/;s/USERNAME_PLACEHOLDER/$DB_USER/;s/PORT_PLACEHOLDER/$DB_PORT/;s/HOST_PLACEHOLDER/$DB_HOST/" $TARGET_TEMPLATE > $root_path/tmp/current_playbook.yml
+    sed "s/PASSWORD_PLACEHOLDER/$DB_PWD/;s/USERNAME_PLACEHOLDER/$DB_USER/;s/PORT_PLACEHOLDER/$DB_PORT/;s/HOST_PLACEHOLDER/$DB_HOST/;s/DB_PLACEHOLDER/$DB_NAME/" $TARGET_TEMPLATE > $root_path/tmp/current_playbook.yml
     sed "1,/^:variables:$/d" $model_path/playbooks/$i.yml.tmpl >> $root_path/tmp/current_playbook.yml
 
   else
 
     # sub in credentials only if target template not provided
-    sed "s/PASSWORD_PLACEHOLDER/$DB_PWD/;s/USERNAME_PLACEHOLDER/$DB_USER/;s/PORT_PLACEHOLDER/$DB_PORT/;s/HOST_PLACEHOLDER/$DB_HOST/" $model_path/playbooks/$i.yml.tmpl > $root_path/tmp/current_playbook.yml
+    sed "s/PASSWORD_PLACEHOLDER/$DB_PWD/;s/USERNAME_PLACEHOLDER/$DB_USER/;s/PORT_PLACEHOLDER/$DB_PORT/;s/HOST_PLACEHOLDER/$DB_HOST/;s/DB_PLACEHOLDER/$DB_NAME/" $model_path/playbooks/$i.yml.tmpl > $root_path/tmp/current_playbook.yml
 
   fi
 
