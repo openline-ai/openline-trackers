@@ -51,7 +51,23 @@ AS(
     ev.refr_urlquery,
     ev.refr_urlfragment,
     ev.refr_medium,
-    ev.refr_source,
+
+    CASE
+        WHEN ev.refr_source is not null
+            THEN ev.refr_source
+        WHEN ev.refr_urlhost like '%ycombinator.com'
+            THEN 'YCombinator'
+        WHEN ev.refr_urlhost = 'vercel.com'
+            THEN 'Vercel'
+        WHEN ev.refr_urlhost = 'com.linkedin.android'
+            THEN 'LinkedIn'
+        WHEN page_referrer is null
+            THEN 'Direct'
+        WHEN refr_medium = 'internal'
+            THEN 'Internal'
+        ELSE 'Other'
+    END AS refr_source,
+
     ev.refr_term,
 
     ev.geo_country,
