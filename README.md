@@ -19,9 +19,9 @@
   </p>
   <p>
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)][cli-repo] 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)][tracker-repo] 
 [![license](https://img.shields.io/badge/license-Apache%202-blue)][apache2] 
-[![stars](https://img.shields.io/github/stars/openline-ai/openline-customer-os?style=social)][cli-repo] 
+[![stars](https://img.shields.io/github/stars/openline-ai/openline-trackers?style=social)][tracker-repo] 
 [![twitter](https://img.shields.io/twitter/follow/openlineAI?style=social)][twitter] 
 [![slack](https://img.shields.io/badge/slack-community-blueviolet.svg?logo=slack)][slack]
 
@@ -86,10 +86,10 @@ A massive thank you goes out to all these wonderful people ([emoji key][emoji]):
 
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0
 [call]: https://meetings-eu1.hubspot.com/matt2/customer-demos
-[cli-repo]: https://github.com/openline-ai/openline-customer-os/
 [contributions]: https://github.com/openline-ai/community/blob/main/README.md
 [docs]: https://openline.ai
 [emoji]: https://allcontributors.org/docs/en/emoji-key
 [pricing]: https://openline.ai/pricing
 [slack]: https://join.slack.com/t/openline-ai/shared_invite/zt-1i6umaw6c-aaap4VwvGHeoJ1zz~ngCKQ
+[tracker-repo]: https://github.com/openline-ai/openline-trackers/
 [twitter]: https://twitter.com/OpenlineAI
