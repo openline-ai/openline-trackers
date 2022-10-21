@@ -10,7 +10,7 @@
   <p>
     <h3>
       <b>
-        Openline command line interface (CLI)
+        Openline first-party data trackers
       </b>
     </h3>
   </p>
