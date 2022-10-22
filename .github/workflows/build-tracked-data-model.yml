@@ -1,11 +1,13 @@
-name: Create and publish openline-tracked-data-models docker image
+name: Create and publish tracked-data-models docker image
 
 on:
-  push
+  push:
+    paths:
+      - tracked-data-models/**
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository }}/tracked-data-models
 
 jobs:
   build-and-push-image:
@@ -34,7 +36,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: .
+          context: tracked-data-models/.
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
