@@ -1,0 +1,19 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :scratch_schema:     scratch
+  :entropy:            ""
+  :cleanup:            true
+:steps:
+- :name: "99-cleanup-tables"
+  :queries:
+    - :name: 99-cleanup-tables
+      :file: standard/03-info/99-complete/99-cleanup-tables.sql
+      :template: true

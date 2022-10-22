@@ -1,0 +1,42 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :tracker_table:      sp_tracker
+  :entropy:            ""
+  :start_date:         2022-01-01
+:steps:
+- :name: "01-setup-tables"
+  :queries:
+    - :name: 01-setup-tables
+      :file: standard/03-info/01-main/01-setup-tables.sql
+      :template: true
+- :name: "01-app-info"
+  :queries:
+    - :name: 02-app-info
+      :file: standard/03-info/01-main/02-app-info.sql
+      :template: true
+    - :name: 03-page-info
+      :file: standard/03-info/01-main/03-page-info.sql
+      :template: true
+- :name: "04-info-metadata"
+  :queries:
+    - :name: 04-info-metadata
+      :file: standard/03-info/01-main/04-info-metadata.sql
+      :template: true
+- :name: "10-commit-info"
+  :queries:
+    - :name: 10-commit-info
+      :file: standard/03-info/01-main/10-commit-info.sql
+      :template: true
