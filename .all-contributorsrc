@@ -15,6 +15,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "mattbr0wn",
+      "name": "Matt Brown",
+      "avatar_url": "https://avatars.githubusercontent.com/u/113338429?v=4",
+      "profile": "https://github.com/mattbr0wn",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
