@@ -1,3 +1,4 @@
+<div align="center">  
   <a href="https://openline.ai">
     <img
       src="https://www.openline.ai/TeamHero.svg"
