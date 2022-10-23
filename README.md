@@ -97,6 +97,7 @@ A massive thank you goes out to all these wonderful people ([emoji key][emoji]):
 [docs]: https://openline.ai
 [emoji]: https://allcontributors.org/docs/en/emoji-key
 [pricing]: https://openline.ai/pricing
+[repo]: https://github.com/openline-ai/openline-trackers/
 [slack]: https://join.slack.com/t/openline-ai/shared_invite/zt-1i6umaw6c-aaap4VwvGHeoJ1zz~ngCKQ
 [tracker-repo]: https://github.com/openline-ai/openline-trackers/
 [twitter]: https://twitter.com/OpenlineAI
