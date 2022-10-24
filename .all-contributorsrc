@@ -24,6 +24,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "edifirut",
+      "name": "edifirut",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108661145?v=4",
+      "profile": "https://github.com/edifirut",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
