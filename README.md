@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center">  
   <a href="https://openline.ai">
     <img
       src="https://www.openline.ai/TeamHero.svg"
@@ -19,9 +19,9 @@
   </p>
   <p>
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)][cli-repo] 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen?logo=github)][tracker-repo] 
 [![license](https://img.shields.io/badge/license-Apache%202-blue)][apache2] 
-[![stars](https://img.shields.io/github/stars/openline-ai/openline-customer-os?style=social)][cli-repo] 
+[![stars](https://img.shields.io/github/stars/openline-ai/openline-trackers?style=social)][tracker-repo] 
 [![twitter](https://img.shields.io/twitter/follow/openlineAI?style=social)][twitter] 
 [![slack](https://img.shields.io/badge/slack-community-blueviolet.svg?logo=slack)][slack]
 
@@ -71,7 +71,14 @@ A massive thank you goes out to all these wonderful people ([emoji key][emoji]):
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-
+<table>
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/alexopenline"><img src="https://avatars.githubusercontent.com/u/95470380?v=4?s=100" width="100px;" alt="alexopenline"/><br /><sub><b>alexopenline</b></sub></a><br /><a href="https://github.com/openline-ai/openline-trackers/commits?author=alexopenline" title="Code">💻</a> <a href="https://github.com/openline-ai/openline-trackers/commits?author=alexopenline" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/mattbr0wn"><img src="https://avatars.githubusercontent.com/u/113338429?v=4?s=100" width="100px;" alt="Matt Brown"/><br /><sub><b>Matt Brown</b></sub></a><br /><a href="https://github.com/openline-ai/openline-trackers/commits?author=mattbr0wn" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
@@ -86,10 +93,10 @@ A massive thank you goes out to all these wonderful people ([emoji key][emoji]):
 
 [apache2]: https://www.apache.org/licenses/LICENSE-2.0
 [call]: https://meetings-eu1.hubspot.com/matt2/customer-demos
-[cli-repo]: https://github.com/openline-ai/openline-customer-os/
 [contributions]: https://github.com/openline-ai/community/blob/main/README.md
 [docs]: https://openline.ai
 [emoji]: https://allcontributors.org/docs/en/emoji-key
 [pricing]: https://openline.ai/pricing
 [slack]: https://join.slack.com/t/openline-ai/shared_invite/zt-1i6umaw6c-aaap4VwvGHeoJ1zz~ngCKQ
+[tracker-repo]: https://github.com/openline-ai/openline-trackers/
 [twitter]: https://twitter.com/OpenlineAI
