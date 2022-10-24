@@ -76,6 +76,7 @@ A massive thank you goes out to all these wonderful people ([emoji key][emoji]):
     <tr>
       <td align="center"><a href="https://github.com/alexopenline"><img src="https://avatars.githubusercontent.com/u/95470380?v=4?s=100" width="100px;" alt="alexopenline"/><br /><sub><b>alexopenline</b></sub></a><br /><a href="https://github.com/openline-ai/openline-trackers/commits?author=alexopenline" title="Code">💻</a> <a href="https://github.com/openline-ai/openline-trackers/commits?author=alexopenline" title="Documentation">📖</a></td>
       <td align="center"><a href="https://github.com/mattbr0wn"><img src="https://avatars.githubusercontent.com/u/113338429?v=4?s=100" width="100px;" alt="Matt Brown"/><br /><sub><b>Matt Brown</b></sub></a><br /><a href="https://github.com/openline-ai/openline-trackers/commits?author=mattbr0wn" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/edifirut"><img src="https://avatars.githubusercontent.com/u/108661145?v=4?s=100" width="100px;" alt="edifirut"/><br /><sub><b>edifirut</b></sub></a><br /><a href="https://github.com/openline-ai/openline-trackers/pulls?q=is%3Apr+reviewed-by%3Aedifirut" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
