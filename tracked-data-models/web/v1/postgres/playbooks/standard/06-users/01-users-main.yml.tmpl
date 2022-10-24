@@ -1,0 +1,63 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :entropy:            ""
+  :start_date:         2022-01-01
+:steps:
+- :name: 01-setup-users
+  :queries:
+    - :name: 01-setup-users
+      :file: standard/06-users/01-main/01-setup-users.sql
+      :template: true
+- :name: 02-userids-this-run
+  :queries:
+    - :name: 02-userids-this-run
+      :file: standard/06-users/01-main/02-userids-this-run.sql
+      :template: true
+- :name: 03-users-limits
+  :queries:
+    - :name: 03-users-limits
+      :file: standard/06-users/01-main/03-users-limits.sql
+      :template: true
+- :name: 04-users-sessions-this-run
+  :queries:
+    - :name: 04-users-sessions-this-run
+      :file: standard/06-users/01-main/04-users-sessions-this-run.sql
+      :template: true
+- :name: 05-users-aggs
+  :queries:
+    - :name: 05-users-aggs
+      :file: standard/06-users/01-main/05-users-aggs.sql
+      :template: true
+- :name: 06-users-lasts
+  :queries:
+    - :name: 06-users-lasts
+      :file: standard/06-users/01-main/06-users-lasts.sql
+      :template: true
+- :name: 07-users
+  :queries:
+    - :name: 07-users
+      :file: standard/06-users/01-main/07-users.sql
+      :template: true
+- :name: 08-users-metadata
+  :queries:
+    - :name: 08-users-metadata
+      :file: standard/06-users/01-main/08-users-metadata.sql
+      :template: true
+- :name: 09-commit-users
+  :queries:
+    - :name: 09-commit-users
+      :file: standard/06-users/01-main/09-commit-users.sql
+      :template: true

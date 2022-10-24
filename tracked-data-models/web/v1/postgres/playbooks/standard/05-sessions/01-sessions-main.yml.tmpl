@@ -1,0 +1,59 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :tracker_table:      sp_tracker
+  :entropy:            ""
+  :start_date:         2022-01-01
+:steps:
+- :name: "01-setup-tables"
+  :queries:
+    - :name: 01-setup-tables
+      :file: standard/05-sessions/01-main/01-setup-tables.sql
+      :template: true
+- :name: "02-sessions-this-run"
+  :queries:
+    - :name: 02-sessions-this-run
+      :file: standard/05-sessions/01-main/02-sessions-this-run.sql
+      :template: true
+- :name: "03-sessions-aggs"
+  :queries:
+    - :name: 03-sessions-aggs
+      :file: standard/05-sessions/01-main/03-sessions-aggs.sql
+      :template: true
+- :name: "04-sessions-lasts"
+  :queries:
+    - :name: 04-sessions-lasts
+      :file: standard/05-sessions/01-main/04-sessions-lasts.sql
+      :template: true
+- :name: "05-sessions"
+  :queries:
+    - :name: 05-sessions
+      :file: standard/05-sessions/01-main/05-sessions.sql
+      :template: true
+- :name: "06-sessions-metadata"
+  :queries:
+    - :name: 06-sessions-metadata
+      :file: standard/05-sessions/01-main/06-sessions-metadata.sql
+      :template: true
+- :name: "07-sessions-prep-manifest"
+  :queries:
+    - :name: 07-sessions-prep-manifest
+      :file: standard/05-sessions/01-main/07-sessions-prep-manifest.sql
+      :template: true
+- :name: "08-commit-sessions"
+  :queries:
+    - :name: 08-commit-sessions
+      :file: standard/05-sessions/01-main/08-commit-sessions.sql
+      :template: true

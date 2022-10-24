@@ -1,0 +1,19 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :scratch_schema:     scratch
+  :entropy:            ""
+  :cleanup:            true
+:steps:
+- :name: 99-page-views-cleanup
+  :queries:
+    - :name: 99-page-views-cleanup
+      :file: standard/04-page-views/99-complete/99-page-views-cleanup.sql
+      :template: true
