@@ -21,24 +21,24 @@
         "dependsOn": ["standard/04-page-views/01-page-views-main"]
       },
       {
-        "playbook": "standard/06-users/01-users-main",
+        "playbook": "standard/06-visitors/01-visitors-main",
         "dependsOn": ["standard/05-sessions/01-sessions-main"]
       },
       {
         "playbook": "standard/04-page-views/99-page-views-complete",
-        "dependsOn": ["standard/04-page-views/01-page-views-main", "standard/05-sessions/01-sessions-main", "standard/06-users/01-users-main"]
+        "dependsOn": ["standard/04-page-views/01-page-views-main", "standard/05-sessions/01-sessions-main", "standard/06-visitors/01-visitors-main"]
       },
       {
         "playbook": "standard/05-sessions/99-sessions-complete",
-        "dependsOn": ["standard/06-users/01-users-main", "standard/05-sessions/01-sessions-main"]
+        "dependsOn": ["standard/06-visitors/01-visitors-main", "standard/05-sessions/01-sessions-main"]
       },
       {
-        "playbook": "standard/06-users/99-users-complete",
-        "dependsOn": ["standard/06-users/01-users-main"]
+        "playbook": "standard/06-visitors/99-visitors-complete",
+        "dependsOn": ["standard/06-visitors/01-visitors-main"]
       },
       {
         "playbook": "standard/03-info/99-info-complete",
-        "dependsOn": ["standard/03-info/01-info-main", "standard/06-users/01-users-main"]
+        "dependsOn": ["standard/03-info/01-info-main", "standard/06-visitors/01-visitors-main"]
       }
     ],
     "lockType": "hard",

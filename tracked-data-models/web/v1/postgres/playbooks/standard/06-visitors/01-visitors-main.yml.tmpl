@@ -1,0 +1,63 @@
+:targets:
+- :name:
+  :type:
+  :host:
+  :database:
+  :port:
+  :username:
+  :password:
+  :ssl:
+:variables:
+  :model_version:
+  :scratch_schema:     scratch
+  :output_schema:      derived
+  :input_schema:       atomic
+  :tenant_schema:      openline
+  :entropy:            ""
+  :start_date:         2022-01-01
+:steps:
+- :name: 01-setup-visitors
+  :queries:
+    - :name: 01-setup-visitors
+      :file: standard/06-visitors/01-main/01-setup-visitors.sql
+      :template: true
+- :name: 02-visitorids-this-run
+  :queries:
+    - :name: 02-visitorids-this-run
+      :file: standard/06-visitors/01-main/02-visitorids-this-run.sql
+      :template: true
+- :name: 03-visitors-limits
+  :queries:
+    - :name: 03-visitors-limits
+      :file: standard/06-visitors/01-main/03-visitors-limits.sql
+      :template: true
+- :name: 04-visitors-sessions-this-run
+  :queries:
+    - :name: 04-visitors-sessions-this-run
+      :file: standard/06-visitors/01-main/04-visitors-sessions-this-run.sql
+      :template: true
+- :name: 05-visitors-aggs
+  :queries:
+    - :name: 05-visitors-aggs
+      :file: standard/06-visitors/01-main/05-visitors-aggs.sql
+      :template: true
+- :name: 06-visitors-lasts
+  :queries:
+    - :name: 06-visitors-lasts
+      :file: standard/06-visitors/01-main/06-visitors-lasts.sql
+      :template: true
+- :name: 07-visitors
+  :queries:
+    - :name: 07-visitors
+      :file: standard/06-visitors/01-main/07-visitors.sql
+      :template: true
+- :name: 08-visitors-metadata
+  :queries:
+    - :name: 08-visitors-metadata
+      :file: standard/06-visitors/01-main/08-visitors-metadata.sql
+      :template: true
+- :name: 09-commit-visitors
+  :queries:
+    - :name: 09-commit-visitors
+      :file: standard/06-visitors/01-main/09-commit-visitors.sql
+      :template: true

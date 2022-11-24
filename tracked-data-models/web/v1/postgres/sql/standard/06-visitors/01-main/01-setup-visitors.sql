@@ -1,15 +1,15 @@
 -- A table storing last successful run per scope
-CREATE TABLE IF NOT EXISTS {{.output_schema}}.users_last_success_run_id{{.entropy}} (
+CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors_last_success_run_id{{.entropy}} (
     run_id TIMESTAMP
 );
 
-insert into {{.output_schema}}.users_last_success_run_id{{.entropy}} (select '{{.start_date}}' where
-    (select run_id from {{.output_schema}}.users_last_success_run_id{{.entropy}}) is null);
+insert into {{.output_schema}}.visitors_last_success_run_id{{.entropy}} (select '{{.start_date}}' where
+    (select run_id from {{.output_schema}}.visitors_last_success_run_id{{.entropy}}) is null);
 
 -- Setup Metadata
-DROP TABLE IF EXISTS {{.scratch_schema}}.users_metadata_this_run{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}};
 
-CREATE TABLE {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
+CREATE TABLE {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}} (
   id VARCHAR(64),
   run_id TIMESTAMP,
   model_version VARCHAR(64),
@@ -27,7 +27,7 @@ CREATE TABLE {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
   distinct_keys_removed INT
 );
 
-INSERT INTO {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
+INSERT INTO {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}} (
   SELECT
     'run',
     run_id,
@@ -48,7 +48,7 @@ INSERT INTO {{.scratch_schema}}.users_metadata_this_run{{.entropy}} (
 );
 
 
-CREATE TABLE IF NOT EXISTS {{.output_schema}}.users{{.entropy}} (
+CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
   -- app ID
   app_id VARCHAR(255),
   name_tracker varchar(128),
@@ -112,7 +112,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.users{{.entropy}} (
   mkt_network VARCHAR(64)
 );
 
-CREATE TABLE IF NOT EXISTS {{.output_schema}}.users_manifest{{.entropy}} (
+CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors_manifest{{.entropy}} (
     domain_userid VARCHAR(128),
     start_tstamp TIMESTAMP
 );

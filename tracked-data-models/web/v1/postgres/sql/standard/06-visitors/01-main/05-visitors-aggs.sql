@@ -1,7 +1,7 @@
 
-DROP TABLE IF EXISTS {{.scratch_schema}}.users_aggregates{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.visitors_aggregates{{.entropy}};
 
-CREATE TABLE {{.scratch_schema}}.users_aggregates{{.entropy}}
+CREATE TABLE {{.scratch_schema}}.visitors_aggregates{{.entropy}}
 
 AS(
   SELECT
@@ -19,7 +19,7 @@ AS(
     COUNT(DISTINCT domain_sessionid) AS sessions,
     SUM(engaged_time_in_s) AS engaged_time_in_s
 
-  FROM {{.scratch_schema}}.users_sessions_this_run{{.entropy}}
+  FROM {{.scratch_schema}}.visitors_sessions_this_run{{.entropy}}
 
   GROUP BY 1,2,3,4
 );

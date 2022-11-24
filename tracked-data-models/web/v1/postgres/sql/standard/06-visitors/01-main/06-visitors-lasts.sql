@@ -1,7 +1,7 @@
 
-DROP TABLE IF EXISTS {{.scratch_schema}}.users_lasts{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.visitors_lasts{{.entropy}};
 
-CREATE TABLE {{.scratch_schema}}.users_lasts{{.entropy}}
+CREATE TABLE {{.scratch_schema}}.visitors_lasts{{.entropy}}
 AS(
   SELECT
     a.domain_userid,
@@ -16,9 +16,9 @@ AS(
     a.last_page_urlfragment
 
   FROM
-    {{.scratch_schema}}.users_sessions_this_run{{.entropy}} a
+    {{.scratch_schema}}.visitors_sessions_this_run{{.entropy}} a
 
-  INNER JOIN {{.scratch_schema}}.users_aggregates{{.entropy}} b
+  INNER JOIN {{.scratch_schema}}.visitors_aggregates{{.entropy}} b
   ON a.domain_userid = b.domain_userid
   AND a.end_tstamp = b.end_tstamp
 )

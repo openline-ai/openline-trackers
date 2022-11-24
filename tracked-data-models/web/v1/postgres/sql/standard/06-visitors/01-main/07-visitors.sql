@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS {{.scratch_schema}}.users_this_run{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.visitors_this_run{{.entropy}};
 
-CREATE TABLE {{.scratch_schema}}.users_this_run{{.entropy}}
+CREATE TABLE {{.scratch_schema}}.visitors_this_run{{.entropy}}
 
 AS (
   SELECT
@@ -8,7 +8,7 @@ AS (
     b.name_tracker,
     b.tenant,
 
-    -- user fields
+    -- visitor fields
     a.user_id,
     a.domain_userid,
     a.network_userid,
@@ -65,12 +65,12 @@ AS (
     a.mkt_clickid,
     a.mkt_network
 
-  FROM {{.scratch_schema}}.users_aggregates{{.entropy}} AS b
+  FROM {{.scratch_schema}}.visitors_aggregates{{.entropy}} AS b
 
-  INNER JOIN {{.scratch_schema}}.users_sessions_this_run{{.entropy}} AS a
+  INNER JOIN {{.scratch_schema}}.visitors_sessions_this_run{{.entropy}} AS a
     ON a.domain_userid = b.domain_userid
     AND a.start_tstamp = b.start_tstamp
 
-  INNER JOIN {{.scratch_schema}}.users_lasts{{.entropy}} c
+  INNER JOIN {{.scratch_schema}}.visitors_lasts{{.entropy}} c
     ON b.domain_userid = c.domain_userid
 );

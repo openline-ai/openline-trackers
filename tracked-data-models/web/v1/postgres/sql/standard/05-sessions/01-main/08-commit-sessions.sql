@@ -19,10 +19,10 @@ BEGIN;
       (SELECT * FROM {{.scratch_schema}}.sessions_this_run{{.entropy}});
 
     -- Commit staging manifest if enabled
-    DELETE FROM {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}}
+    DELETE FROM {{.scratch_schema}}.sessions_visitorid_manifest_staged{{.entropy}}
       WHERE domain_userid IN (SELECT domain_userid FROM {{.scratch_schema}}.sessions_userid_manifest_this_run{{.entropy}});
 
-    INSERT INTO {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}}
+    INSERT INTO {{.scratch_schema}}.sessions_visitorid_manifest_staged{{.entropy}}
       (SELECT * FROM {{.scratch_schema}}.sessions_userid_manifest_this_run{{.entropy}});
 
   -- Commit metadata
