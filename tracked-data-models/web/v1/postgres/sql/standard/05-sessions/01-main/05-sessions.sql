@@ -17,7 +17,7 @@ AS (
     b.end_tstamp,
 
     -- user fields
-    a.user_id,
+    a.visitor_id,
     a.domain_userid,
     a.network_userid,
 

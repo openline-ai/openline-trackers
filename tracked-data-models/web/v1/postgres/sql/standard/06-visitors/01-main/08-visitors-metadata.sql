@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS {{.scratch_schema}}.users_run_metadata_temp{{.entropy}};
+DROP TABLE IF EXISTS {{.scratch_schema}}.visitors_run_metadata_temp{{.entropy}};
 
-CREATE TABLE {{.scratch_schema}}.users_run_metadata_temp{{.entropy}} AS (
+CREATE TABLE {{.scratch_schema}}.visitors_run_metadata_temp{{.entropy}} AS (
   SELECT
     'run' AS id,
     count(*) AS rows_this_run,
@@ -11,10 +11,10 @@ CREATE TABLE {{.scratch_schema}}.users_run_metadata_temp{{.entropy}} AS (
     MAX(start_tstamp) AS max_time_key
 
   FROM
-    {{.scratch_schema}}.users_this_run{{.entropy}}
+    {{.scratch_schema}}.visitors_this_run{{.entropy}}
 );
 
-UPDATE {{.scratch_schema}}.users_metadata_this_run{{.entropy}}
+UPDATE {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}}
   SET
     rows_this_run = b.rows_this_run,
     distinct_key = b.distinct_key,
@@ -22,5 +22,5 @@ UPDATE {{.scratch_schema}}.users_metadata_this_run{{.entropy}}
     time_key = b.time_key,
     min_time_key = b.min_time_key,
     max_time_key = b.max_time_key
-  FROM {{.scratch_schema}}.users_run_metadata_temp{{.entropy}} b
-  WHERE {{.scratch_schema}}.users_metadata_this_run{{.entropy}}.id = b.id;
+  FROM {{.scratch_schema}}.visitors_run_metadata_temp{{.entropy}} b
+  WHERE {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}}.id = b.id;

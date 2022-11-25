@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     end_tstamp TIMESTAMP,
 
     -- user fields
-    user_id VARCHAR(255),
+    visitor_id VARCHAR(255),
     domain_userid VARCHAR(128),
     network_userid VARCHAR(128),
 
@@ -121,8 +121,8 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     operating_system_version VARCHAR
 );
 
--- Staged manifest table as input to users step
-CREATE TABLE IF NOT EXISTS {{.scratch_schema}}.sessions_userid_manifest_staged{{.entropy}} (
+-- Staged manifest table as input to visitors step
+CREATE TABLE IF NOT EXISTS {{.scratch_schema}}.sessions_visitorid_manifest_staged{{.entropy}} (
     domain_userid VARCHAR(128),
     start_tstamp TIMESTAMP
 );
