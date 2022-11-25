@@ -109,7 +109,9 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
   mkt_content VARCHAR(500) ,
   mkt_campaign VARCHAR(255) ,
   mkt_clickid VARCHAR(128) ,
-  mkt_network VARCHAR(64)
+  mkt_network VARCHAR(64),
+
+  synced_to_customer_os BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors_manifest{{.entropy}} (
