@@ -12,7 +12,7 @@ AS(
     sp.tenant,
 
     -- user fields
-    ev.user_id,
+    ev.visitor_id,
     ev.domain_userid,
     ev.network_userid,
 

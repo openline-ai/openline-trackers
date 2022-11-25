@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     end_tstamp TIMESTAMP,
 
     -- user fields
-    user_id VARCHAR(255),
+    visitor_id VARCHAR(255),
     domain_userid VARCHAR(128),
     network_userid VARCHAR(128),
 

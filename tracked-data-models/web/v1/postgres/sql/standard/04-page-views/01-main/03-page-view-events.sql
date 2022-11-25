@@ -11,7 +11,7 @@ AS(
     ev.name_tracker,
 
     -- user fields
-    ev.user_id,
+    ev.user_id as visitor_id,
     ev.domain_userid,
     ev.network_userid,
 

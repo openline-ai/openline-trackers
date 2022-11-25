@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
   tenant varchar(64),
 
   -- user fields
-  user_id VARCHAR(255) ,
+  visitor_id VARCHAR(255) ,
   domain_userid VARCHAR(128) ,
   network_userid VARCHAR(128) ,
 

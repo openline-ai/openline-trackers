@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_views{{.entropy}} (
   name_tracker varchar(128),
   tenant varchar(64),
 
-  user_id VARCHAR(255) ,
+  visitor_id VARCHAR(255) ,
   domain_userid VARCHAR(128) ,
   network_userid VARCHAR(128) ,
 

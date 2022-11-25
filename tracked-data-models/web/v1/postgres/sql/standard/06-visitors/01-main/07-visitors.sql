@@ -9,7 +9,7 @@ AS (
     b.tenant,
 
     -- visitor fields
-    a.user_id,
+    a.visitor_id,
     a.domain_userid,
     a.network_userid,
 
