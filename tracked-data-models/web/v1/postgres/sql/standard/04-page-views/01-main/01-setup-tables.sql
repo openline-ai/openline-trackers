@@ -163,7 +163,9 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_views{{.entropy}} (
   operating_system_class VARCHAR,
   operating_system_name VARCHAR,
   operating_system_name_version VARCHAR,
-  operating_system_version VARCHAR
+  operating_system_version VARCHAR,
+
+  synced_to_customer_os BOOLEAN DEFAULT FALSE
 );
 
 -- Create staging table - acts as input to sessions step
