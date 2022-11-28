@@ -14,6 +14,7 @@ AS(
     ev.user_id as visitor_id,
     ev.domain_userid,
     ev.network_userid,
+    null as customer_os_contact_id,
 
     -- session fields
     ev.domain_sessionid,

@@ -54,10 +54,11 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
   name_tracker varchar(128),
   tenant varchar(64),
 
-  -- user fields
-  visitor_id VARCHAR(255) ,
-  domain_userid VARCHAR(128) ,
-  network_userid VARCHAR(128) ,
+    -- user fields
+    visitor_id VARCHAR(255) ,
+    domain_userid VARCHAR(128) ,
+    network_userid VARCHAR(128) ,
+    customer_os_contact_id VARCHAR(128),
 
   start_tstamp TIMESTAMP,
   end_tstamp TIMESTAMP ,
