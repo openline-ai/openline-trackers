@@ -49,10 +49,10 @@ INSERT INTO {{.scratch_schema}}.visitors_metadata_this_run{{.entropy}} (
 
 
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
-  -- app ID
-  app_id VARCHAR(255),
-  name_tracker varchar(128),
-  tenant varchar(64),
+    -- app ID
+    app_id VARCHAR(255),
+    name_tracker varchar(128),
+    tenant varchar(64),
 
     -- user fields
     visitor_id VARCHAR(255) ,
@@ -60,59 +60,61 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors{{.entropy}} (
     network_userid VARCHAR(128) ,
     customer_os_contact_id VARCHAR(128),
 
-  start_tstamp TIMESTAMP,
-  end_tstamp TIMESTAMP ,
+    start_tstamp TIMESTAMP,
+    end_tstamp TIMESTAMP ,
 
-  page_views INT ,
+    page_views INT ,
 
-  sessions INT ,
+    sessions INT ,
 
-  engaged_time_in_s INT ,
+    engaged_time_in_s INT ,
 
-  -- first page fields
-  first_page_title VARCHAR(2000) ,
+    -- first page fields
+    first_page_title VARCHAR(2000) ,
 
-  first_page_url VARCHAR(4096) ,
+    first_page_url VARCHAR(4096) ,
 
-  first_page_urlscheme VARCHAR(16) ,
-  first_page_urlhost VARCHAR(255) ,
-  first_page_urlpath VARCHAR(3000) ,
-  first_page_urlquery VARCHAR(6000) ,
-  first_page_urlfragment VARCHAR(3000) ,
+    first_page_urlscheme VARCHAR(16) ,
+    first_page_urlhost VARCHAR(255) ,
+    first_page_urlpath VARCHAR(3000) ,
+    first_page_urlquery VARCHAR(6000) ,
+    first_page_urlfragment VARCHAR(3000) ,
 
-  last_page_title VARCHAR(2000) ,
+    last_page_title VARCHAR(2000) ,
 
-  last_page_url VARCHAR(4096) ,
+    last_page_url VARCHAR(4096) ,
 
-  last_page_urlscheme VARCHAR(16) ,
-  last_page_urlhost VARCHAR(255) ,
-  last_page_urlpath VARCHAR(3000) ,
-  last_page_urlquery VARCHAR(6000) ,
-  last_page_urlfragment VARCHAR(3000) ,
+    last_page_urlscheme VARCHAR(16) ,
+    last_page_urlhost VARCHAR(255) ,
+    last_page_urlpath VARCHAR(3000) ,
+    last_page_urlquery VARCHAR(6000) ,
+    last_page_urlfragment VARCHAR(3000) ,
 
-  -- referrer fields
-  referrer VARCHAR(4096) ,
+    -- referrer fields
+    referrer VARCHAR(4096) ,
 
-  refr_urlscheme VARCHAR(16) ,
-  refr_urlhost VARCHAR(255) ,
-  refr_urlpath VARCHAR(6000) ,
-  refr_urlquery VARCHAR(6000) ,
-  refr_urlfragment VARCHAR(3000) ,
+    refr_urlscheme VARCHAR(16) ,
+    refr_urlhost VARCHAR(255) ,
+    refr_urlpath VARCHAR(6000) ,
+    refr_urlquery VARCHAR(6000) ,
+    refr_urlfragment VARCHAR(3000) ,
 
-  refr_medium VARCHAR(25) ,
-  refr_source VARCHAR(50) ,
-  refr_term VARCHAR(255) ,
+    refr_medium VARCHAR(25) ,
+    refr_source VARCHAR(50) ,
+    refr_term VARCHAR(255) ,
 
-  -- marketing fields
-  mkt_medium VARCHAR(255) ,
-  mkt_source VARCHAR(255) ,
-  mkt_term VARCHAR(255) ,
-  mkt_content VARCHAR(500) ,
-  mkt_campaign VARCHAR(255) ,
-  mkt_clickid VARCHAR(128) ,
-  mkt_network VARCHAR(64),
+    -- marketing fields
+    mkt_medium VARCHAR(255) ,
+    mkt_source VARCHAR(255) ,
+    mkt_term VARCHAR(255) ,
+    mkt_content VARCHAR(500) ,
+    mkt_campaign VARCHAR(255) ,
+    mkt_clickid VARCHAR(128) ,
+    mkt_network VARCHAR(64),
 
-  synced_to_customer_os BOOLEAN DEFAULT FALSE
+    synced_to_customer_os BOOLEAN DEFAULT FALSE,
+
+    PRIMARY KEY (domain_userid, name_tracker)
 );
 
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.visitors_manifest{{.entropy}} (

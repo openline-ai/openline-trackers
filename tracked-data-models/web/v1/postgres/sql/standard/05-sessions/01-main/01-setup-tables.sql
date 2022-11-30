@@ -121,7 +121,8 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     operating_system_name_version VARCHAR,
     operating_system_version VARCHAR,
 
-    synced_to_customer_os BOOLEAN DEFAULT FALSE
+    synced_to_customer_os BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY (domain_sessionid, name_tracker)
 );
 
 -- Staged manifest table as input to visitors step
