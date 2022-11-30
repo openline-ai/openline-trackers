@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS {{.output_schema}}.sessions{{.entropy}} (
     visitor_id VARCHAR(255),
     domain_userid VARCHAR(128),
     network_userid VARCHAR(128),
+    customer_os_contact_id VARCHAR(128),
 
     page_views INT,
     engaged_time_in_s INT,

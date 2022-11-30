@@ -20,6 +20,7 @@ AS (
     a.visitor_id,
     a.domain_userid,
     a.network_userid,
+    a.customer_os_contact_id,
 
     -- engagement fields
     b.page_views,

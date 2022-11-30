@@ -12,6 +12,7 @@ AS (
     a.visitor_id,
     a.domain_userid,
     a.network_userid,
+    a.customer_os_contact_id,
 
     b.start_tstamp,
     b.end_tstamp,
