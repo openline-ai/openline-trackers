@@ -16,7 +16,7 @@ CREATE TABLE {{.scratch_schema}}.pv_events_staged{{.entropy}}
 AS (
        SELECT
        a.*,
-       b.id AS page_view_id
+       a.domain_sessionid || ':' ||b.id AS page_view_id
        FROM
     {{.input_schema}}.events a
        INNER JOIN
