@@ -2,7 +2,7 @@
 DROP TABLE IF EXISTS {{.scratch_schema}}.pv_addon_ua_parser{{.entropy}};
 
 CREATE TABLE IF NOT EXISTS {{.scratch_schema}}.pv_addon_ua_parser{{.entropy}} (
-  page_view_id CHAR(36),
+  page_view_id CHAR(100),
   useragent_family VARCHAR,
   useragent_major VARCHAR,
   useragent_minor VARCHAR,

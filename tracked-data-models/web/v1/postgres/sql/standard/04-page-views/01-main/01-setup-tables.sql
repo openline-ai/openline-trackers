@@ -51,7 +51,7 @@ INSERT INTO {{.scratch_schema}}.pv_metadata_this_run{{.entropy}} (
 -- Create page views table if it doesn't exist
 CREATE TABLE IF NOT EXISTS {{.output_schema}}.page_views{{.entropy}} (
 
-    page_view_id CHAR(36) NOT NULL,
+    page_view_id CHAR(100) NOT NULL,
     event_id CHAR(36) ,
 
     app_id VARCHAR(255) ,

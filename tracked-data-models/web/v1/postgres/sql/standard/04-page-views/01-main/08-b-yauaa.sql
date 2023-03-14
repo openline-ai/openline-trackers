@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS {{.scratch_schema}}.pv_addon_yauaa{{.entropy}};
 
 CREATE TABLE IF NOT EXISTS {{.scratch_schema}}.pv_addon_yauaa{{.entropy}} (
-  page_view_id CHAR(36),
+  page_view_id CHAR(100),
   device_class VARCHAR,
   agent_class VARCHAR,
   agent_name VARCHAR,
